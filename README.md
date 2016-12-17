@@ -1,1 +1,1 @@
-# Android-Examples## Branch Namimg SpecificationJust use the software name.## i.MX6 Examples### i.MX6 Linux Examples### i.MX6 JNI Examples### i.MX6 Application Demo Examples
+# Android-Examples## Branch Namimg Specification(chip name)-(software name)-(classification)  * chip name: * i.MX6;   * AM335x;  * classification:   * Linux;    * JNI;   * App;  E.g  i.MX6(chip name)-UARTTest(software name)-(Linux) = i.MX6-UARTTest-Linux## i.MX6 Examples### i.MX6 Linux Examples### i.MX6 JNI Examples### i.MX6 Android Application Demo Examples
