@@ -36,3 +36,7 @@
         }
     }
 ```
+
+## Released&Download
+
+* [v17.02.09.00](https://github.com/AplexOS/Android-Examples/releases/tag/SBC-7112S_android-serialport-api_App_Android4.2_v17.02.09.00)
