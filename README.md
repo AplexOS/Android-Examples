@@ -9,7 +9,7 @@
   this also made the GC can not be released, that the unreleased Activity will get the 
   next data which is belong to the new Activity.
 
-* The complete code for ReadThread in SerialPortActivity.java:
+* The complete code for ReadThread in [SerialPortActivity.java](src/android_serialport_api/sample/SerialPortActivity.java):
 
 ```java
     private class ReadThread extends Thread {
