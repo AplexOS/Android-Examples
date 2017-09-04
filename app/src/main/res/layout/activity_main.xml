@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.aplex.audiocontrol.MainActivity">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Button
+            android:id="@+id/powerOnOff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POWER_ONOFF" />
+
+        <Button
+            android:id="@+id/sysSelectLow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SYS_SELECT_LOW" />
+
+        <Button
+            android:id="@+id/sysSelectHigh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SYS_SELECT_HIGH" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true" >
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:layout_gravity="bottom"/>
+        </ScrollView>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
