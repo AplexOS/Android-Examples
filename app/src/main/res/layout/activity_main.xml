@@ -6,42 +6,102 @@
     android:layout_height="match_parent"
     tools:context="com.android.aplex.audiocontrol.MainActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <Button
-            android:id="@+id/powerOnOff"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="POWER_ONOFF" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            android:gravity="center_horizontal"
+            tools:layout_editor_absoluteY="8dp">
 
-        <Button
-            android:id="@+id/sysSelectLow"
+            <Button
+                android:id="@+id/powerOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="POWER_ONOFF" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SYS_SELECT_LOW" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            android:gravity="center_horizontal"
+            tools:layout_editor_absoluteY="8dp">
 
-        <Button
-            android:id="@+id/sysSelectHigh"
+            <Button
+                android:id="@+id/sysSelectLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SYS_SELECT_LOW" />
+
+            <Button
+                android:id="@+id/sysSelectHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SYS_SELECT_HIGH" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SYS_SELECT_HIGH" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            android:gravity="center_horizontal"
+            tools:layout_editor_absoluteY="8dp">
 
-        <ScrollView
-            android:layout_width="fill_parent"
+            <Button
+                android:id="@+id/spkMode1Low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SPK_MODE1_LOW" />
+
+            <Button
+                android:id="@+id/spkMode1High"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SPK_MODE1_HIGH" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true" >
-            <TextView
-                android:id="@+id/message"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text=""
-                android:layout_gravity="bottom"/>
-        </ScrollView>
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            android:gravity="center_horizontal"
+            tools:layout_editor_absoluteY="8dp">
+
+            <Button
+                android:id="@+id/gpioAnt3Low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GPIO_ANT3_LOW" />
+
+            <Button
+                android:id="@+id/gpioAnt3High"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GPIO_ANT3_HIGH" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:layout_gravity="bottom"/>
 
     </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
