@@ -1,9 +1,12 @@
 package com.android.aplex.aplextest42project;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -143,10 +146,11 @@ public class CPUUsage extends AppCompatActivity {
 
             @Override
             public void handleMessage(Message msg) {
-                if(msg.what == 0)//成功
-                {
-                    CPU_usage.setText(CPURateString);
-                }
+            if(msg.what == 0)//成功
+            {
+                CPU_usage.setText(CPURateString);
+                temperature.setText(getTemperature());
+            }
             }
 
         };
@@ -158,19 +162,19 @@ public class CPUUsage extends AppCompatActivity {
 
             @Override
             public void run() {
-                int cpuCurrentUsage = 0;
-                while (true) {
-                    cpuCurrentUsage = (int)getProcessCpuRate();
-                    CPURateString = String.format("%3d  %%",
-                            cpuCurrentUsage > 100 ? 100 : cpuCurrentUsage < 0 ? 0 : cpuCurrentUsage);
-                    try {
-                        handler.sendEmptyMessage(0);//UI线程外想更新UI线程
-                        Thread.sleep(300);
-                    } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
+            int cpuCurrentUsage = 0;
+            while (true) {
+                cpuCurrentUsage = (int)getProcessCpuRate();
+                CPURateString = String.format("%3d  %%",
+                        cpuCurrentUsage > 100 ? 100 : cpuCurrentUsage < 0 ? 0 : cpuCurrentUsage);
+                try {
+                    handler.sendEmptyMessage(0);//UI线程外想更新UI线程
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
                 }
+            }
             }
         });
         getCPURateThread.start();
@@ -180,6 +184,9 @@ public class CPUUsage extends AppCompatActivity {
         String ret = "";
         try {
             ret =  ShellExecute.execute("cat /sys/class/thermal/thermal_zone0/temp");
+            // for android 5.1
+            if (ret.length() > 2)
+                ret = String.valueOf(Float.valueOf(ret)/1000);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -239,5 +246,21 @@ public class CPUUsage extends AppCompatActivity {
                 + Long.parseLong(cpuInfos[14]) + Long.parseLong(cpuInfos[15])
                 + Long.parseLong(cpuInfos[16]);
         return appCpuTime;
+    }
+
+    private String getVersionName()
+    {
+        // 获取packagemanager的实例
+        PackageManager packageManager = getPackageManager();
+        // getPackageName()是你当前类的包名，0代表是获取版本信息
+        PackageInfo packInfo = null;
+        String version = "";
+        try {
+            packInfo = packageManager.getPackageInfo(getPackageName(),0);
+            version = packInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return version;
     }
 }
