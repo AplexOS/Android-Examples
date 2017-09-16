@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.aplex.aplextest42project.CPUUsage">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/start_threads"
+            android:textSize="40px"
+            android:textAllCaps="false"
+            android:text="Start"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40px"
+                android:text="Temperature:  "/>
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40px"
+                android:text=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40px"
+                android:text="CPU Usage:  "/>
+
+            <TextView
+                android:id="@+id/cpu_usage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40px"
+                android:text=""/>
+        </LinearLayout>
+
+        <TextClock
+            android:id="@+id/currentTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:format12Hour="yyyy:MM:dd hh:mm:ss a"
+            android:textSize="40px"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
