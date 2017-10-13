@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EraseMMC</string>
+    <string name="EraseUboot">Erase U-boot</string>
+</resources>
